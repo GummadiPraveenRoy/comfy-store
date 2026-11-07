@@ -291,7 +291,7 @@ Hero
   min-height: 100vh;
   margin-top: -6rem;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./images/main-bcg.jpeg) center/cover;
+    url(./assets/images/main-bcg.jpeg) center/cover;
   display: grid;
   place-items: center;
   color: var(--clr-white);
@@ -774,4 +774,47 @@ Single Product Page
   .single-product-center {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* ---- additions for the React version ---- */
+.company-btn.active {
+  color: var(--clr-primary-5);
+  text-decoration: underline;
+}
+.cart-empty {
+  text-align: center;
+  margin-top: 2rem;
+}
+.error {
+  margin-bottom: 1rem;
+}
+.products-wrapper {
+  position: relative;
+  min-height: 12rem;
+}
+
+/* footer */
+.site-footer {
+  background: var(--clr-grey-1);
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
+}
+.site-footer p {
+  color: var(--clr-white);
+}
+.site-footer span {
+  color: var(--clr-primary-5);
+}
+
+/* product colour selection */
+.color-btn {
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  vertical-align: middle;
+}
+.color-btn.selected {
+  border-color: var(--clr-grey-1);
+  outline: 2px solid var(--clr-white);
+  outline-offset: -4px;
 }
