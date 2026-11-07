@@ -1,0 +1,8 @@
+// prices from the API are in cents
+export const formatPrice = (price) =>
+  new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(price / 100);
+
+export default formatPrice;
