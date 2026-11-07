@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import { useCart } from '../context/CartContext';
 import { fetchSingleProduct } from '../services/productApi';
 import { formatPrice } from '../utils/formatPrice';
+import { Loading } from '../components/Loading';
 
 export default function SingleProduct() {
   const { id } = useParams();
@@ -35,7 +36,7 @@ export default function SingleProduct() {
   if (loading) {
     return (
       <div className="page-loading">
-        <h2>loading...</h2>
+        <h2><Loading/></h2>
       </div>
     );
   }

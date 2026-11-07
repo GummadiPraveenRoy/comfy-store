@@ -5,6 +5,7 @@ import ProductSearch from '../features/products/ProductSearch';
 import CompanyFilter from '../features/products/CompanyFilter';
 import PriceFilter from '../features/products/PriceFilter';
 import useProducts from '../hooks/useProducts';
+import { Loading } from '../components/Loading';
 
 export default function Products() {
   const { products, loading } = useProducts();
@@ -33,7 +34,7 @@ export default function Products() {
   if (loading && products.length === 0) {
     return (
       <div className="page-loading">
-        <h2>Loading...</h2>
+        <h2><Loading/></h2>
       </div>
     );
   }
