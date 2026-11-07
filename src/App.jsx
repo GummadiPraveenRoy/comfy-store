@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Products from './pages/Products'
 import NotFound from './pages/NotFound'
+import { CartProvider } from './context/CartContext'
 
 function App() {
 
