@@ -1,42 +1,32 @@
 import { Link } from 'react-router-dom';
-import '../utils/formatPrice';
+import { useCart } from '../context/CartContext';
+import { formatPrice } from '../utils/formatPrice';
 
-const ProductCard = ({ product }) => {
-  const { id, name, price, image } = product;
+// shared by Home (featured) and the Products page
+export default function ProductCard({ product }) {
+  const { addToCart } = useCart();
+  const { id, name, image, price } = product;
 
   return (
     <article className="product">
       <div className="product-container">
-        <img
-          src={image}
-          className="product-img img"
-          alt={name}
-        />
-
+        <img src={image} className="product-img img" alt={name} />
         <div className="product-icons">
-          <Link
-            to={`/product/${id}`}
-            className="product-icon"
-            aria-label={`View ${name}`}
-          >
+          <Link to={`/products/${id}`} className="product-icon">
             <i className="fas fa-search"></i>
           </Link>
-
           <button
             className="product-cart-btn product-icon"
-            aria-label={`Add ${name} to cart`}
+            onClick={() => addToCart(product)}
           >
             <i className="fas fa-shopping-cart"></i>
           </button>
         </div>
       </div>
-
       <footer>
         <p className="product-name">{name}</p>
         <h4 className="product-price">{formatPrice(price)}</h4>
       </footer>
     </article>
   );
-};
-
-export default ProductCard;
+}
