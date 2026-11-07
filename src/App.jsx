@@ -5,6 +5,8 @@ import Layout from './components/Layout'
 import Products from './pages/Products'
 import NotFound from './pages/NotFound'
 import { CartProvider } from './context/CartContext'
+import SingleProduct from './pages/SingleProduct'
+import About from './pages/About'
 
 function App() {
 
@@ -13,12 +15,12 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="products" element={<Products />} />
-              {/* <Route path="products/:id" element={<SingleProduct/>} /> */}
-              {/* <Route path="about" element={<About />} /> */}
-              <Route path="*" element={<NotFound />} />
+            <Route element={<Layout/>}>
+              <Route index element={<Home/>} />
+              <Route path="products" element={<Products/>} />
+              <Route path="products/:id" element={<SingleProduct/>} />
+              <Route path="about" element={<About/>} />
+              <Route path="*" element={<NotFound/>} />
             </Route>
           </Routes>
         </BrowserRouter>
